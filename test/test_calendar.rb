@@ -3,6 +3,16 @@
 require "test_helper"
 
 class TestCalendar < Minitest::Test
+  describe "message" do
+    it "can print" do
+      birth_date = DateTime.new(2017, 9, 1, 12, 00)
+      thai_date = ThaiCalendar::Calendar.new(birth_date)
+
+      expected = "วันศุกร์ ขึ้น 11 ค่ำ เดือน 10 ปี ระกา จ.ศ.1379"
+      assert_equal expected, thai_date.to_s
+    end
+  end
+
   describe "Edge cases of this module" do
     it "works after 2483 BE (1940 CE)" do
       birth_date = DateTime.new(2017, 9, 1, 12, 00)

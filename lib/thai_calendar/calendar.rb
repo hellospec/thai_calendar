@@ -14,6 +14,8 @@ module ThaiCalendar
     def summary
       "วัน#{day_thai} #{moon_pharse} #{day_of_moon} ค่ำ เดือน #{month_of_moon} ปี #{zodiac} จ.ศ.#{minor_era}"
     end
+
+    alias_method :to_s, :summary
     
     def moon_pharse
       get_moon[:pharse]
